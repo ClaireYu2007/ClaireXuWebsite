@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ITZY's FANS Page</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body class="members-page"> 
+    <div class="wrapper">
+        <header>
+            <a href="#" class="logo">ITZY</a>
+            <div class="menu">
+                <a href="index.html" onclick="closeMenu()">Home</a>
+                <a href="index.members.html" onclick="closeMenu()">Members</a>
+                <a href="index.music.html" onclick="closeMenu()">Music</a>
+                <a href="index.dance.html" onclick="closeMenu()">Dance</a>
+                <a href="index.fanzone.html" onclick="closeMenu()">Fan Zone</a>
+                <i class="fa fa-times close-menu" onclick="closeMenu()"></i>
+            </div>
+            <div class="menu-shadow" onclick="closeMenu()"></div>
+            <i class="fa fa-bars show-bar" onclick="openMenu()"></i>
+        </header>
+
+        <div class="members-grid">
+            <div class="member" onclick="showModal(0)">
+                <div class="member-photo-container">
+                    <img src="images/yeji1.jpg" alt="Yeji" class="member-photo">
+                </div>
+                <h3>Yeji</h3>
+                <div class="member-text-box" id="text-0">
+                    <p class="member-bio">Yeji is known for her powerful stage presence and leadership in ITZY.</p>
+                </div>
+            </div>
+        
+            <div class="member" onclick="showModal(1)">
+                <div class="member-photo-container">
+                    <img src="images/lia1.jpg" alt="Lia" class="member-photo">
+                </div>
+                <h3>Lia</h3>
+                <div class="member-text-box" id="text-1">
+                    <p class="member-bio">Lia is the main vocalist and known for her emotional performance style.</p>
+                </div>
+            </div>
+        
+            <div class="member" onclick="showModal(2)">
+                <div class="member-photo-container">
+                    <img src="images/ryujin1.jpg" alt="Ryujin" class="member-photo">
+                </div>
+                <h3>Ryujin</h3>
+                <div class="member-text-box" id="text-2">
+                    <p class="member-bio">Ryujin is the rapper and dancer of the group, known for her charisma.</p>
+                </div>
+            </div>
+        
+            <div class="member" onclick="showModal(3)">
+                <div class="member-photo-container">
+                    <img src="images/chaeryeong1.jpg" alt="Chaeryeong" class="member-photo">
+                </div>
+                <h3>Chaeryeong</h3>
+                <div class="member-text-box" id="text-3">
+                    <p class="member-bio">Chaeryeong is a talented dancer with a powerful stage presence.</p>
+                </div>
+            </div>
+        
+            <div class="member" onclick="showModal(4)">
+                <div class="member-photo-container">
+                    <img src="images/yuna1.jpg" alt="Yuna" class="member-photo">
+                </div>
+                <h3>Yuna</h3>
+                <div class="member-text-box" id="text-4">
+                    <p class="member-bio">Yuna is the youngest member, known for her bright and playful personality.</p>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div id="member-text">
+        </div>
+
+    </div>
+    
+    <script>
+        function showModal(memberId) {
+            var modal = document.getElementById('modal-' + memberId);
+            modal.style.display = 'block';
+            modal.classList.add('show');  
+        }
+
+        function closeModal(memberId) {
+            var modal = document.getElementById('modal-' + memberId);
+            modal.style.display = 'none';
+            modal.classList.remove('show'); 
+        }
+
+        function openMenu() {
+            document.querySelector('header .menu').classList.add('menu-active');
+            document.querySelector('.menu-shadow').style.display = 'block';
+        }
+
+        function closeMenu() {
+            document.querySelector('header .menu').classList.remove('menu-active');
+            document.querySelector('.menu-shadow').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

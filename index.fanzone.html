@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ITZY's Fan Zone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+           header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4.5rem;
+            padding: 0 20px;
+            background-color: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        header .logo {
+            color: #fff;
+            font-family: "Ubuntu", sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.2rem;
+            text-decoration: none;
+        }
+
+        header .menu {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .menu a {
+            color: pink;
+            font-family: 'Yeseva One', cursive;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover,
+        .menu a.active {
+            color: #ff4281;
+        }
+
+        .fanzone-grid {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px; 
+            padding: 20px;
+        }
+
+        .fan {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 10px;
+            overflow: hidden;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .fan:hover {
+            transform: scale(1.05);
+        }
+
+        .fan-photo-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .fan-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fan h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #ea297a;
+        }
+
+        .fan .fan-bio {
+            font-size: 1rem;
+            color: #ddd;
+            padding: 10px;
+            font-family: 'Yeseva One', cursive;
+        }
+
+        .learn-more {
+            font-size: 0.9rem;
+            color: #f39abf;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: underline;
+            font-family: 'Yeseva One', cursive;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(246, 200, 222, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: rgb(252, 213, 220);
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 25px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .close:hover {
+            color: #ff4281;
+        }
+
+        @media (max-width: 768px) {
+            .fanzone-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">ITZY</a>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="index.members.html">Members</a>
+            <a href="index.music.html">Music</a>
+            <a href="index.dance.html">Dance</a>
+            <a href="index.fanzone.html" class="active">Fan Zone</a>
+        </div>
+    </header>
+
+    <div class="fanzone-grid">
+
+        <div class="fan" onclick="showModal(0)">
+            <div class="fan-photo-container">
+                <img src="images/group5.jpg" alt="Fan 1" class="fan-photo">
+            </div>
+            <h3>Letter From Fan 1</h3>
+            <p class="fan-bio">Your music is the soundtrack of our lives, and your passion inspires us to dream bigger every day.</p>
+            <p class="learn-more">Click to see the letter</p>
+        </div>
+
+
+        <div class="fan" onclick="showModal(1)">
+            <div class="fan-photo-container">
+                <img src="images/group8.jpg" alt="Fan 2" class="fan-photo">
+            </div>
+            <h3>Letter From Fan 2</h3>
+            <p class="fan-bio">We love you not just for your talent, but for the kindness, strength, and joy you bring into the world</p>
+            <p class="learn-more">Click to see the letter</p>
+        </div>
+
+
+        <div class="fan" onclick="showModal(2)">
+            <div class="fan-photo-container">
+                <img src="images/group9.jpg" alt="Fan 3" class="fan-photo">
+            </div>
+            <h3>Letter From Fan 3</h3>
+            <p class="fan-bio">Through every song, every smile, and every performance, you remind us what it means to truly shine.</p>
+            <p class="learn-more">Click to see the letter</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h3>LOVE ITZY</h3>
+            <p>Here you can add more detailed information about the fan.</p>
+        </div>
+    </div>
+
+    <script>
+        function showModal(fanId) {
+            var modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+
+            var fanDetails = [
+                "Dear ITZY,Words can't express how much you've inspired me. Your music is not just entertainment; it has been my comfort during tough times and my celebration during happy moments. Each of you brings something so unique to the group, yet together you create magic.Yeji, your leadership and strength teach me to stay confident no matter the challenges. Lia, your voice touches my soul and reminds me of the beauty in simplicity. Ryujin, your charisma and energy give me the courage to step out of my comfort zone. Chaeryeong, your dedication to dance inspires me to pursue my own passions. And Yuna, your joyful spirit brings light to even my darkest days.Thank you for being a source of hope, strength, and happiness. I’ll continue to support you always!",
+                "To ITZY,You’ve changed my life in ways I never thought possible. Your journey, from your debut to becoming global icons, has been nothing short of extraordinary. It feels like you’re not just performing for us—you’re sharing pieces of yourselves, and for that, I’m forever grateful.The lyrics of your songs, especially “WANNABE” and “Not Shy,” remind me to embrace who I am and live unapologetically. Watching your performances inspires me to work harder in my own life. You’ve taught me that being “different” is a strength, not a flaw.I hope you know how much your ITZY MIDZY family loves and supports you. No matter what, we’ll always be here cheering you on",
+                "Dearest ITZY,Every time I see you on stage, it feels like you’re performing just for me. Your smiles, your energy, your passion—they remind me that dreams are worth chasing.There was a time when I felt lost and unsure of myself. Then, I found your music, and it was like you were telling me, “You’re enough. Keep going.” Your song “LOCO” gave me the confidence to pursue what I love, and “Not Shy” reminded me to never settle for less than I deserve.Thank you for being my role models, my inspiration, and my light in the dark. MIDZY will always have your back, just as you’ve always been there for us",
+        ]
+            var modalContent = modal.querySelector('.modal-content');
+            modalContent.querySelector('h3').innerText = "Fan " + (fanId + 1) + " Details";
+            modalContent.querySelector('p').innerText = fanDetails[fanId];
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
